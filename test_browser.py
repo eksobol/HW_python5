@@ -32,12 +32,24 @@ def test_add_browser():
     browser.element('#city').click()
     browser.element('//*[text()="Merrut"]').click()
 
-    # проверки
-    browser.element('#userName-wrapper').should(have.text('Name'))
-    browser.element('#genterWrapper').should(have.text('Male'))
-
-
     browser.element('#submit').click()
+
+    # проверки
+
+    browser.element('//table//td[contains(text(),"Student Name")]/../td[2]').should(have.text('Anna Ivanova'))
+    browser.element('//table//td[contains(text(),"Student Email")]/../td[2]').should(have.text('abc@ya.ru'))
+    browser.element('//table//td[contains(text(),"Gender")]/../td[2]').should(have.text('Female'))
+    browser.element('//table//td[contains(text(),"Mobile")]/../td[2]').should(have.text('8111111111'))
+    browser.element('//table//td[contains(text(),"Date of Birth")]/../td[2]').should(have.text('08 August,2000'))
+    browser.element('//table//td[contains(text(),"Subjects")]/../td[2]').should(have.text('Chemistry'))
+    browser.element('//table//td[contains(text(),"Hobbies")]/../td[2]').should(have.text('Sports, Music'))
+    browser.element('//table//td[contains(text(),"Picture")]/../td[2]').should(have.text('image.png'))
+    browser.element('//table//td[contains(text(),"Address")]/../td[2]').should(have.text('homeland'))
+    browser.element('//table//td[contains(text(),"State and City")]/../td[2]').should(have.text('Uttar Pradesh Merrut'))
+
+
+
+    # browser.element('#submit').click()
 
 
 
